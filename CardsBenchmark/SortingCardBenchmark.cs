@@ -21,7 +21,6 @@ namespace CardsBenchmark
         }
 
 
-
         [Benchmark]
         public void BenchmarkListChainSorting()
         {

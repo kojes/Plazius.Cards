@@ -81,7 +81,6 @@
     <Compile Include="Card.cs" />
     <Compile Include="CardGeneratorFromJson.cs" />
     <Compile Include="CardGeneratorRandom.cs" />
-    <Compile Include="NewDictionarySorting.cs" />
     <Compile Include="DictionaryChainListSorting.cs" />
     <Compile Include="Extensions\Int32Extensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />

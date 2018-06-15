@@ -20,21 +20,23 @@ namespace Tests
             const int cardGreaterQuantity = 40000000;
 
             var ex =
-                Assert.Throws<ArgumentOutOfRangeException>(() => { new Cards.CardGeneratorRandom(10).GetShuffledCardsList(cardLowerQuantity); });
+                Assert.Throws<ArgumentOutOfRangeException>(
+                    () => { new Cards.CardGeneratorRandom(10).GetShuffledCardsList(cardLowerQuantity); });
 
             Assert.That(ex.Message,
                 Is.EqualTo(
                     $"Value '{cardLowerQuantity}' is not greater than or equal to limit '2'.\r\nActual value was {cardLowerQuantity}."));
 
-            ex = Assert.Throws<ArgumentOutOfRangeException>(() => { new Cards.CardGeneratorRandom(cityNameLowerLength).GetShuffledCardsList(10); });
+            ex =
+                Assert.Throws<ArgumentOutOfRangeException>(
+                    () => { new Cards.CardGeneratorRandom(cityNameLowerLength).GetShuffledCardsList(10); });
             Assert.That(ex.Message,
                 Is.EqualTo(
                     $"Value '{cityNameLowerLength}' is not greater than or equal to limit '3'.\r\nActual value was {cityNameLowerLength}."));
 
-            ex = Assert.Throws<ArgumentOutOfRangeException>(() =>
-            {
-                new Cards.CardGeneratorRandom(10).GetShuffledCardsList(cardGreaterQuantity);
-            });
+            ex =
+                Assert.Throws<ArgumentOutOfRangeException>(
+                    () => { new Cards.CardGeneratorRandom(10).GetShuffledCardsList(cardGreaterQuantity); });
             Assert.That(ex.Message,
                 Is.EqualTo(
                     $"Value '{cardGreaterQuantity}' is not lower than or equal to limit '4000000'.\r\nActual value was {cardGreaterQuantity}."));
@@ -50,14 +52,16 @@ namespace Tests
         [Test]
         public void CardGeneratorRandom_GetCardsList_ThrowQuantityErrorException()
         {
-            var exception = Assert.Throws<Exception>(() => { new Cards.CardGeneratorRandom(4).GetShuffledCardsList(500000); });
+            var exception =
+                Assert.Throws<Exception>(() => { new Cards.CardGeneratorRandom(4).GetShuffledCardsList(500000); });
             Assert.That(exception.Message, Is.EqualTo("Not enough cities names to create list without duplicates"));
         }
 
         [Test]
         public void CardGeneratorJson_GetCardsList_ThrowQuantityErrorException()
         {
-            var exception = Assert.Throws<Exception>(() => { new Cards.CardGeneratorRandom(4).GetShuffledCardsList(500000); });
+            var exception =
+                Assert.Throws<Exception>(() => { new Cards.CardGeneratorRandom(4).GetShuffledCardsList(500000); });
             Assert.That(exception.Message, Is.EqualTo("Not enough cities names to create list without duplicates"));
         }
 
@@ -101,6 +105,5 @@ namespace Tests
             var cardList = cardGenerator.GetShuffledCardsList(1000);
             Assert.IsFalse(cardList.CardListIsCorrectChain());
         }
-
     }
 }

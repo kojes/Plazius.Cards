@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using EnsureThat;
+﻿using EnsureThat;
 using Cards.Extensions;
+
 namespace Cards
 {
     public class Card
     {
-        
         public string DepartureCity { get; }
         public string ArrivalCity { get; }
-        
+
         public Card(string departureCity, string arrivalCity)
         {
             Ensure.That(departureCity).IsNotNullOrWhiteSpace();
@@ -31,6 +25,4 @@ namespace Cards
             return DepartureCity + " => " + ArrivalCity;
         }
     }
-
-    
 }
